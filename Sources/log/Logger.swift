@@ -9,28 +9,28 @@ import Alamofire
 
 /// responsible for handling all log creation.
 @objc public class Logger: NSObject {
-    
+
     /// logs message to log.
     ///
     /// - Parameters:
     ///   - message: string representation of log.
     ///   - type: the type that is sending the log creation.
-    @objc static func log(_ message:String, type:Any? = nil) {
+    @objc static func log(_ message: String, type: Any? = nil) {
         Logger.attemptToLog(message, type: type)
     }
-    
+
     /// this function evaluates the environment varibles and creates a log.
     ///
     /// - Parameters:
     ///   - message: intended message for the log.
     ///   - typeName: name of the type creating the log.
-    fileprivate static func attemptToLog(_ message:String, type:Any?) {
-        
+    fileprivate static func attemptToLog(_ message: String, type: Any?) {
+
         let sanitizedMessage = sanitize(message)
-        
+
         switch EnvironmentVariables.VerboseLevel.value {
         case .silent:
-            
+
             // logging
             break
         case .verbose:
@@ -48,35 +48,35 @@ import Alamofire
             Logger.log("No Environment Variable set for Logging.")
         }
     }
-    
+
     /// removes any sensitive information from the message.
     ///
     /// - Parameter message: message to sanitize as a String.
     /// - Returns: returns sanitized message as a String.
-    static func sanitize(_ message:String) -> String {
+    static func sanitize(_ message: String) -> String {
         // sanitation -> we need to add sanitation logic here.
         return message
     }
-    
+
     /// Sends log to server
     ///
     /// - Parameters:
     ///   - succes: closure to be performed if log was succesfully sent to server.
     ///   - fail: closure to be performed if log was NOT succesfully sent to server.
     static func sendLogToServer(succes: @escaping() -> Void, fail: @escaping() -> Void) {
-        
-        let url:URL = FileManager
+
+        let url: URL = FileManager
             .default
             .urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log.txt")
-        
+
         AF.upload(multipartFormData: { (multipartFormData) in
             multipartFormData.append(url, withName: "log:\(Date())")
         }, to: "").response { (dataResponse) in
             switch dataResponse.result {
             case .success(let data):
                 //print response.result
-                Logger.log(data.debugDescription, type:self)
-                
+                Logger.log(data.debugDescription, type: self)
+
                 DispatchQueue.main.async {
                     succes()
                 }

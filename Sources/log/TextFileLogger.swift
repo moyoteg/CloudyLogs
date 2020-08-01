@@ -9,11 +9,11 @@ import Foundation
 
 /// Responsible for generating and appending logs onto a text file.
 class TextFileLogger: TextOutputStream {
-    
+
     static var logger = TextFileLogger()
-    
+
     private init() {} // we are sure, nobody else could create it
-    
+
     /// writes a new log file or appends to an existing one the string provided.
     ///
     /// - Parameter string: string to append to log.

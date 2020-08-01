@@ -10,9 +10,9 @@ import Foundation
 /// These represent the environment variables handled by the scheme.
 // - verboseLevel: determines if logs should be printed to console.
 enum EnvironmentVariables: String, RawRepresentable {
-    
+
     case verboseLevel
-    
+
     /// this variable represents the verbosity of the logs for VIVLoggable.
     ///
     /// - silent: no logs will be printed to console.
@@ -22,7 +22,7 @@ enum EnvironmentVariables: String, RawRepresentable {
         case silent
         case verbose
         case none
-        
+
         /// returns the current value of the environment variable.
         static var value: VerboseLevel {
             guard let value = ProcessInfo.processInfo.environment[EnvironmentVariables.verboseLevel.rawValue],
@@ -32,10 +32,9 @@ enum EnvironmentVariables: String, RawRepresentable {
             return verboseLevel
         }
     }
-    
+
     /// current value of session verbose level.
-    var verboseLevel:VerboseLevel {
+    var verboseLevel: VerboseLevel {
         return VerboseLevel.value
     }
 }
-
