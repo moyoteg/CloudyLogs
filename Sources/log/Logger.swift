@@ -1,6 +1,5 @@
 //
 //  Logger.swift
-//  BLEBasicChat
 //
 //  Created by Moi Gutierrez on 2/25/20.
 
@@ -15,7 +14,7 @@ import Alamofire
     /// - Parameters:
     ///   - message: string representation of log.
     ///   - type: the type that is sending the log creation.
-    @objc static func log(_ message: String, type: Any? = nil) {
+    @objc static public func log(_ message: String, type: Any? = nil) {
         Logger.attemptToLog(message, type: type)
     }
 
@@ -63,7 +62,7 @@ import Alamofire
     /// - Parameters:
     ///   - succes: closure to be performed if log was succesfully sent to server.
     ///   - fail: closure to be performed if log was NOT succesfully sent to server.
-    static func sendLogToServer(succes: @escaping() -> Void, fail: @escaping() -> Void) {
+    static public func sendLogToServer(succes: @escaping() -> Void, fail: @escaping() -> Void) {
 
         let url: URL = FileManager
             .default
