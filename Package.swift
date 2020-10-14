@@ -27,11 +27,11 @@ let package = Package(
         .target(
             name: "log",
             dependencies: [
+                "Alamofire",
             ]),
         .testTarget(
             name: "logTests",
             dependencies: [
-                "Alamofire",
             ])
     ]
 )

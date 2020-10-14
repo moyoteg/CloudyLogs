@@ -37,12 +37,14 @@ import Alamofire
                 // otherwise only use the message.
                 let log = "\(sanitizedMessage)"
                 print(log, Date(), to: &TextFileLogger.logger)
+                print(log)
                 return
             }
             // sanitation -> we need to add sanitation logic here.
             // if get type name has a valid string use it for the name.
             let log = "\(String(describing: type)): \(sanitizedMessage)"
             print(log, Date(), to: &TextFileLogger.logger)
+            print(log)
         case .none:
             Logger.log("No Environment Variable set for Logging.")
         }
@@ -70,7 +72,7 @@ import Alamofire
 
         AF.upload(multipartFormData: { (multipartFormData) in
             multipartFormData.append(url, withName: "log:\(Date())")
-        }, to: "").response { (dataResponse) in
+        }, to: "https://nikola-cloudylogs.glitch.me/upload").response { (dataResponse) in
             switch dataResponse.result {
             case .success(let data):
                 //print response.result
