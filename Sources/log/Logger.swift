@@ -35,18 +35,18 @@ import Alamofire
         case .verbose:
             guard let type = type else {
                 // otherwise only use the message.
-                let log = "\(sanitizedMessage)"
-                print(log, Date(), to: &TextFileLogger.logger)
+                let log = "\(Date()): \(sanitizedMessage)"
+                print(log, to: &TextFileLogger.logger)
                 print(log)
                 return
             }
             // sanitation -> we need to add sanitation logic here.
             // if get type name has a valid string use it for the name.
             let log = "\(String(describing: type)): \(sanitizedMessage)"
-            print(log, Date(), to: &TextFileLogger.logger)
+            print(log, to: &TextFileLogger.logger)
             print(log)
         case .none:
-            Logger.log("No Environment Variable set for Logging.")
+            Logger.log("Logger: No Environment Variable set for Logging.")
         }
     }
 
@@ -70,13 +70,16 @@ import Alamofire
                 .urls(for: .documentDirectory, in: .userDomainMask)
                 .first?
                 .appendingPathComponent("log.txt") else {
-            print("TextFileLogger: could not get log.txt file url")
+            print("Logger: could not get log.txt file url")
             return
         }
 
-        AF.upload(multipartFormData: { (multipartFormData) in
-            multipartFormData.append(url, withName: "log:\(Date())")
-        }, to: "https://nikola-cloudylogs.glitch.me/upload").response { (dataResponse) in
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData
+                .append(url, withName: "\(Date())")
+        },
+        to: "https://nikola-cloudylogs.glitch.me/upload")
+        .response { (dataResponse) in
             switch dataResponse.result {
             case .success(let data):
                 //print response.result
@@ -86,11 +89,11 @@ import Alamofire
                     succes()
                 }
             case .failure(let error):
-                Logger.log("multipartFormData failed: \(error)")
+                Logger.log("Logger: multipartFormData failed: \(error)")
             }
         }.uploadProgress { (progress) in
                 //Print progress
-                Logger.log("log updaload progress: \(progress)")
+            Logger.log("Logger: log.txt upload progress: \(progress.fractionCompleted)")
             }
         }
 }
