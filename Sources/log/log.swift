@@ -1,3 +1,2 @@
-struct log {
-    var text = "Hello, World!"
+enum log {
 }

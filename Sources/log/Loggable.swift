@@ -1,6 +1,5 @@
 //
 //  Loggable.swift
-//  BLEBasicChat
 //
 //  Created by Moi Gutierrez on 2/25/20.
 

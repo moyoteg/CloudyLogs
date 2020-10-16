@@ -1,6 +1,5 @@
 //
 //  TextFileLogger.swift
-//  BLEBasicChat
 //
 //  Created by Moi Gutierrez on 2/25/20.
 //
@@ -18,15 +17,28 @@ class TextFileLogger: TextOutputStream {
     ///
     /// - Parameter string: string to append to log.
     func write(_ string: String) {
-        let url = FileManager
-            .default
-            .urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log.txt")
-        if let handle = try? FileHandle(forWritingTo: url) {
+        
+        guard let stringData = string.data(using: .utf8) else {
+            print("TextFileLogger: could not convert string to data")
+            return
+        }
+        
+        guard let url = FileManager.default
+                .urls(for: .documentDirectory,
+                      in: .userDomainMask)
+                .first?
+                .appendingPathComponent("log.txt") else {
+            print("TextFileLogger: could not get log.txt file url")
+            return
+        }
+        
+        do {
+            let handle = try FileHandle(forWritingTo: url)
             handle.seekToEndOfFile()
-            handle.write(string.data(using: .utf8)!)
+            handle.write(stringData)
             handle.closeFile()
-        } else {
-            try? string.data(using: .utf8)?.write(to: url)
+        } catch {
+            try? stringData.write(to: url)
         }
     }
 }

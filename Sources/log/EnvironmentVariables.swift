@@ -1,11 +1,11 @@
 //
 //  EnvironmentVariables.swift
-//  BLEBasicChat
 //
 //  Created by Moi Gutierrez on 2/25/20.
 //
 
 import Foundation
+import Utilities
 
 /// These represent the environment variables handled by the scheme.
 // - verboseLevel: determines if logs should be printed to console.
@@ -25,9 +25,17 @@ enum EnvironmentVariables: String, RawRepresentable {
 
         /// returns the current value of the environment variable.
         static var value: VerboseLevel {
-            guard let value = ProcessInfo.processInfo.environment[EnvironmentVariables.verboseLevel.rawValue],
+            
+            if  !Utilities.isRunningFromXcodeDebugger() &&
+                ProcessInfo.processInfo.environment[EnvironmentVariables.verboseLevel.rawValue] == nil {
+                return .verbose
+            }
+            
+            guard
+                let value = ProcessInfo.processInfo.environment[EnvironmentVariables.verboseLevel.rawValue],
                 let verboseLevel = EnvironmentVariables.VerboseLevel(rawValue: value) else {
-                    return .none
+                Logger.log("EnvironmentVariables: could not find verboseLevel")
+                return .none
             }
             return verboseLevel
         }

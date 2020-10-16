@@ -66,9 +66,13 @@ import Alamofire
     ///   - fail: closure to be performed if log was NOT succesfully sent to server.
     static public func sendLogToServer(succes: @escaping() -> Void, fail: @escaping() -> Void) {
 
-        let url: URL = FileManager
-            .default
-            .urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("log.txt")
+        guard let url = FileManager.default
+                .urls(for: .documentDirectory, in: .userDomainMask)
+                .first?
+                .appendingPathComponent("log.txt") else {
+            print("TextFileLogger: could not get log.txt file url")
+            return
+        }
 
         AF.upload(multipartFormData: { (multipartFormData) in
             multipartFormData.append(url, withName: "log:\(Date())")
