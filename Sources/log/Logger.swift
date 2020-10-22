@@ -5,6 +5,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 /// responsible for handling all log creation.
 @objc public class Logger: NSObject {
@@ -66,17 +67,9 @@ import Alamofire
     ///   - fail: closure to be performed if log was NOT succesfully sent to server.
     static public func sendLogToServer(succes: @escaping() -> Void, fail: @escaping() -> Void) {
 
-        guard let url = FileManager.default
-                .urls(for: .documentDirectory, in: .userDomainMask)
-                .first?
-                .appendingPathComponent("log.txt") else {
-            print("Logger: could not get log.txt file url")
-            return
-        }
-
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData
-                .append(url, withName: "\(Date())")
+                .append(Log.default.url, withName: Log.fileName)
         },
         to: "https://nikola-cloudylogs.glitch.me/upload")
         .response { (dataResponse) in
@@ -92,8 +85,8 @@ import Alamofire
                 Logger.log("Logger: multipartFormData failed: \(error)")
             }
         }.uploadProgress { (progress) in
-                //Print progress
-            Logger.log("Logger: log.txt upload progress: \(progress.fractionCompleted)")
+            //Print progress
+            Logger.log("Logger: \(Log.fileName).log upload progress: \(progress.fractionCompleted)")
             }
         }
 }
