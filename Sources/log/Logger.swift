@@ -48,7 +48,9 @@ import UIKit
             print(log)
         case .none:
             // must use "print" since we don't want a recurseive call
-            print("Logger: No Environment Variable set for Logging.")
+            if !printedNoVerboseLevelFound {
+                print("Logger: No Environment Variable set for Logging.")
+            }
         }
     }
 
