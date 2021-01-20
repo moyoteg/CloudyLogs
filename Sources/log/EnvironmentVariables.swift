@@ -28,7 +28,7 @@ enum EnvironmentVariables: String, RawRepresentable {
         /// returns the current value of the environment variable.
         static var value: VerboseLevel {
             
-            if  !Utilities.isRunningFromXcodeDebugger() &&
+            if  Utilities.isRunningFromXcodeDebugger() &&
                 ProcessInfo.processInfo.environment[EnvironmentVariables.verboseLevel.rawValue] == nil {
                 return .verbose
             }
@@ -41,7 +41,7 @@ enum EnvironmentVariables: String, RawRepresentable {
                     print("EnvironmentVariables: could not find verboseLevel")
                     printedNoVerboseLevelFound = true
                 }
-                return .none
+                return .verbose
             }
             return verboseLevel
         }
