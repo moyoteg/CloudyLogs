@@ -34,7 +34,8 @@ enum EnvironmentVariables: String, RawRepresentable {
             guard
                 let value = ProcessInfo.processInfo.environment[EnvironmentVariables.verboseLevel.rawValue],
                 let verboseLevel = EnvironmentVariables.VerboseLevel(rawValue: value) else {
-                Logger.log("EnvironmentVariables: could not find verboseLevel")
+                // must use "print" since we don't want a recurseive call
+                print("EnvironmentVariables: could not find verboseLevel")
                 return .none
             }
             return verboseLevel
