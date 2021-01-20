@@ -7,6 +7,8 @@
 import Foundation
 import Utilities
 
+var printedNoVerboseLevelFound = false
+
 /// These represent the environment variables handled by the scheme.
 // - verboseLevel: determines if logs should be printed to console.
 enum EnvironmentVariables: String, RawRepresentable {
@@ -35,7 +37,10 @@ enum EnvironmentVariables: String, RawRepresentable {
                 let value = ProcessInfo.processInfo.environment[EnvironmentVariables.verboseLevel.rawValue],
                 let verboseLevel = EnvironmentVariables.VerboseLevel(rawValue: value) else {
                 // must use "print" since we don't want a recurseive call
-                print("EnvironmentVariables: could not find verboseLevel")
+                if !printedNoVerboseLevelFound {
+                    print("EnvironmentVariables: could not find verboseLevel")
+                    printedNoVerboseLevelFound = true
+                }
                 return .none
             }
             return verboseLevel
