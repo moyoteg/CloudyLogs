@@ -47,7 +47,8 @@ import UIKit
             print(log, to: &TextFileLogger.logger)
             print(log)
         case .none:
-            Logger.log("Logger: No Environment Variable set for Logging.")
+            // must use "print" since we don't want a recurseive call
+            print("Logger: No Environment Variable set for Logging.")
         }
     }
 
