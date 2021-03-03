@@ -20,7 +20,9 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(name: "Utilities", url: "https://github.com/moyoteg/SwiftUtilities", .branch("master")),
+        .package(name: "SwiftUtilities", url: "https://github.com/moyoteg/SwiftUtilities", .branch("master")),
+        .package(name: "SwiftUIComponents", url: "https://github.com/moyoteg/SwiftUIComponents", .branch("master")),
+        // 3rd Party
         .package(name: "Alamofire", url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.2.2")),
     ],
     targets: [
@@ -29,7 +31,10 @@ let package = Package(
         .target(
             name: "log",
             dependencies: [
-                "Utilities",
+                "SwiftUtilities",
+                "SwiftUIComponents",
+                
+                // 3rd Party
                 "Alamofire",
             ]),
         .testTarget(

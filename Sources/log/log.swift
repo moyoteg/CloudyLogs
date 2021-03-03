@@ -1,10 +1,14 @@
+
+#if os(iOS) || os(tvOS) || targetEnvironment(macCatalyst) || os(watchOS)
 import Foundation
+import SwiftUIComponents
 import UIKit
 
 public enum Log {
     
     case `default`
         
+
     public static let fileName = "\(UIDevice.modelName)"
     
     public var url: URL {
@@ -33,3 +37,4 @@ public enum Log {
         return paths[0]
     }
 }
+#endif

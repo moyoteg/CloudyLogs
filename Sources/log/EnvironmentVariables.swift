@@ -5,7 +5,7 @@
 //
 
 import Foundation
-import Utilities
+import SwiftUtilities
 
 var printedNoVerboseLevelFound = false
 
@@ -28,7 +28,7 @@ enum EnvironmentVariables: String, RawRepresentable {
         /// returns the current value of the environment variable.
         static var value: VerboseLevel {
             
-            if  Utilities.isRunningFromXcodeDebugger() &&
+            if  SwiftUtilities.isRunningFromXcodeDebugger() &&
                 ProcessInfo.processInfo.environment[EnvironmentVariables.verboseLevel.rawValue] == nil {
                 return .verbose
             }

@@ -5,7 +5,7 @@
 //
 
 import Foundation
-import Utilities
+import SwiftUtilities
 import UIKit
 
 /// Responsible for generating and appending logs onto a text file.
