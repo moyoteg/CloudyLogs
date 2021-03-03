@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "eaf6e622dd41b07b251d8f01752eab31bc811493",
+          "version": "5.4.1"
+        }
+      },
+      {
+        "package": "DeviceKit",
+        "repositoryURL": "https://github.com/devicekit/DeviceKit.git",
+        "state": {
+          "branch": null,
+          "revision": "4cf9f057db69104851634269f7839f8d0bd346a3",
+          "version": "4.3.0"
+        }
+      },
+      {
+        "package": "SwiftUtilities",
+        "repositoryURL": "https://git.nikolamotor.com/core/mobile/ios/swift/utilities",
+        "state": {
+          "branch": "master",
+          "revision": "87f855f88902b69ca9ce774bd9ab25d8def90355",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

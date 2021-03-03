@@ -20,10 +20,11 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(name: "SwiftUtilities", url: "https://github.com/moyoteg/SwiftUtilities", .branch("master")),
-        .package(name: "SwiftUIComponents", url: "https://github.com/moyoteg/SwiftUIComponents", .branch("master")),
+
         // 3rd Party
         .package(name: "Alamofire", url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.2.2")),
+        .package(name: "SwiftUtilities", url: "https://github.com/moyoteg/SwiftUtilities", .branch("master")),
+        .package(name: "SwiftUIComponents", url: "https://github.com/moyoteg/SwiftUIComponents", .branch("master")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -31,11 +32,13 @@ let package = Package(
         .target(
             name: "log",
             dependencies: [
-                "SwiftUtilities",
-                "SwiftUIComponents",
+
+
                 
                 // 3rd Party
                 "Alamofire",
+                "SwiftUtilities",
+                "SwiftUIComponents",
             ]),
         .testTarget(
             name: "logTests",
