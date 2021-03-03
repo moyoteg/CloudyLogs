@@ -20,11 +20,20 @@
         }
       },
       {
+        "package": "SwiftUIComponents",
+        "repositoryURL": "https://github.com/moyoteg/SwiftUIComponents",
+        "state": {
+          "branch": "main",
+          "revision": "faaa337de4d0871e7c1dca8a4c61184cc59679ff",
+          "version": null
+        }
+      },
+      {
         "package": "SwiftUtilities",
-        "repositoryURL": "https://git.nikolamotor.com/core/mobile/ios/swift/utilities",
+        "repositoryURL": "https://github.com/moyoteg/SwiftUtilities",
         "state": {
           "branch": "master",
-          "revision": "87f855f88902b69ca9ce774bd9ab25d8def90355",
+          "revision": "53a386889ba4d008ed4a507929a708817a6abd98",
           "version": null
         }
       }

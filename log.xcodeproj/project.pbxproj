@@ -21,7 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		044948682537B17800B2CC9F /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 044948672537B17800B2CC9F /* Utilities */; };
+		04021AD525F034EC00CC099E /* SwiftUtilities in Frameworks */ = {isa = PBXBuildFile; productRef = 04021AD425F034EC00CC099E /* SwiftUtilities */; };
+		04021ADC25F0350F00CC099E /* SwiftUIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 04021ADB25F0350F00CC099E /* SwiftUIComponents */; };
 		04712F3A247F0F7E00B52690 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04712F36247F0F7E00B52690 /* Logger.swift */; };
 		04712F3B247F0F7E00B52690 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04712F37247F0F7E00B52690 /* Loggable.swift */; };
 		04712F3C247F0F7E00B52690 /* TextFileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04712F38247F0F7E00B52690 /* TextFileLogger.swift */; };
@@ -71,7 +72,8 @@
 			buildActionMask = 0;
 			files = (
 				04F8386E25314AA600D759EE /* Alamofire in Frameworks */,
-				044948682537B17800B2CC9F /* Utilities in Frameworks */,
+				04021AD525F034EC00CC099E /* SwiftUtilities in Frameworks */,
+				04021ADC25F0350F00CC099E /* SwiftUIComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +178,8 @@
 			name = log;
 			packageProductDependencies = (
 				04F8386D25314AA600D759EE /* Alamofire */,
-				044948672537B17800B2CC9F /* Utilities */,
+				04021AD425F034EC00CC099E /* SwiftUtilities */,
+				04021ADB25F0350F00CC099E /* SwiftUIComponents */,
 			);
 			productName = log;
 			productReference = "log::log::Product" /* log.framework */;
@@ -218,7 +221,8 @@
 			mainGroup = OBJ_5;
 			packageReferences = (
 				04F8386C25314AA600D759EE /* XCRemoteSwiftPackageReference "Alamofire" */,
-				044948662537B17800B2CC9F /* XCRemoteSwiftPackageReference "utilities" */,
+				04021AD325F034EC00CC099E /* XCRemoteSwiftPackageReference "SwiftUtilities" */,
+				04021ADA25F0350F00CC099E /* XCRemoteSwiftPackageReference "SwiftUIComponents" */,
 			);
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
@@ -414,7 +418,7 @@
 					"@loader_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -422,7 +426,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = logTests;
 				TVOS_DEPLOYMENT_TARGET = 13.2;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -443,7 +447,7 @@
 					"@loader_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
@@ -451,7 +455,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGET_NAME = logTests;
 				TVOS_DEPLOYMENT_TARGET = 13.2;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -531,11 +535,19 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		044948662537B17800B2CC9F /* XCRemoteSwiftPackageReference "utilities" */ = {
+		04021AD325F034EC00CC099E /* XCRemoteSwiftPackageReference "SwiftUtilities" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://git.nikolamotor.com/core/mobile/ios/swift/utilities";
+			repositoryURL = "https://github.com/moyoteg/SwiftUtilities";
 			requirement = {
 				branch = master;
+				kind = branch;
+			};
+		};
+		04021ADA25F0350F00CC099E /* XCRemoteSwiftPackageReference "SwiftUIComponents" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/moyoteg/SwiftUIComponents";
+			requirement = {
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -550,10 +562,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		044948672537B17800B2CC9F /* Utilities */ = {
+		04021AD425F034EC00CC099E /* SwiftUtilities */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 044948662537B17800B2CC9F /* XCRemoteSwiftPackageReference "utilities" */;
-			productName = Utilities;
+			package = 04021AD325F034EC00CC099E /* XCRemoteSwiftPackageReference "SwiftUtilities" */;
+			productName = SwiftUtilities;
+		};
+		04021ADB25F0350F00CC099E /* SwiftUIComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04021ADA25F0350F00CC099E /* XCRemoteSwiftPackageReference "SwiftUIComponents" */;
+			productName = SwiftUIComponents;
 		};
 		04F8386D25314AA600D759EE /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
