@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		"log::logPackageTests::ProductTarget" /* logPackageTests */ = {
+		"log::logPackageTests::ProductTarget" /* CloudyLogsPackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_32 /* Build configuration list for PBXAggregateTarget "logPackageTests" */;
+			buildConfigurationList = OBJ_32 /* Build configuration list for PBXAggregateTarget "CloudyLogsPackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
 				OBJ_35 /* PBXTargetDependency */,
 			);
-			name = logPackageTests;
-			productName = logPackageTests;
+			name = CloudyLogsPackageTests;
+			productName = CloudyLogsPackageTests;
 		};
 /* End PBXAggregateTarget section */
 
@@ -28,11 +28,11 @@
 		04712F3C247F0F7E00B52690 /* TextFileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04712F38247F0F7E00B52690 /* TextFileLogger.swift */; };
 		04712F3D247F0F7E00B52690 /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04712F39247F0F7E00B52690 /* EnvironmentVariables.swift */; };
 		04F8386E25314AA600D759EE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04F8386D25314AA600D759EE /* Alamofire */; };
-		OBJ_23 /* log.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* log.swift */; };
+		OBJ_23 /* CloudyLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CloudyLogs.swift */; };
 		OBJ_30 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_41 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* XCTestManifests.swift */; };
 		OBJ_42 /* logTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* logTests.swift */; };
-		OBJ_44 /* log.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "log::log::Product" /* log.framework */; };
+		OBJ_44 /* CloudyLogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "log::log::Product" /* CloudyLogs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +61,9 @@
 		OBJ_13 /* logTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logTests.swift; sourceTree = "<group>"; };
 		OBJ_17 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		OBJ_9 /* log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = log.swift; sourceTree = "<group>"; };
-		"log::log::Product" /* log.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = log.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"log::logTests::Product" /* logTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = logTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_9 /* CloudyLogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudyLogs.swift; sourceTree = "<group>"; };
+		"log::log::Product" /* CloudyLogs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CloudyLogs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"log::logTests::Product" /* CloudyLogsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CloudyLogsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_44 /* log.framework in Frameworks */,
+				OBJ_44 /* CloudyLogs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,8 +109,8 @@
 		OBJ_14 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"log::logTests::Product" /* logTests.xctest */,
-				"log::log::Product" /* log.framework */,
+				"log::logTests::Product" /* CloudyLogsTests.xctest */,
+				"log::log::Product" /* CloudyLogs.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -129,30 +129,30 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_8 /* log */,
+				OBJ_8 /* CloudyLogs */,
 			);
 			name = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_8 /* log */ = {
+		OBJ_8 /* CloudyLogs */ = {
 			isa = PBXGroup;
 			children = (
 				04712F39247F0F7E00B52690 /* EnvironmentVariables.swift */,
 				04712F37247F0F7E00B52690 /* Loggable.swift */,
 				04712F36247F0F7E00B52690 /* Logger.swift */,
 				04712F38247F0F7E00B52690 /* TextFileLogger.swift */,
-				OBJ_9 /* log.swift */,
+				OBJ_9 /* CloudyLogs.swift */,
 			);
-			name = log;
-			path = Sources/log;
+			name = CloudyLogs;
+			path = Sources/CloudyLogs;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		"log::SwiftPMPackageDescription" /* logPackageDescription */ = {
+		"log::SwiftPMPackageDescription" /* CloudyLogsPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_26 /* Build configuration list for PBXNativeTarget "logPackageDescription" */;
+			buildConfigurationList = OBJ_26 /* Build configuration list for PBXNativeTarget "CloudyLogsPackageDescription" */;
 			buildPhases = (
 				OBJ_29 /* Sources */,
 			);
@@ -160,13 +160,13 @@
 			);
 			dependencies = (
 			);
-			name = logPackageDescription;
+			name = CloudyLogsPackageDescription;
 			productName = logPackageDescription;
 			productType = "com.apple.product-type.framework";
 		};
-		"log::log" /* log */ = {
+		"log::log" /* CloudyLogs */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_19 /* Build configuration list for PBXNativeTarget "log" */;
+			buildConfigurationList = OBJ_19 /* Build configuration list for PBXNativeTarget "CloudyLogs" */;
 			buildPhases = (
 				OBJ_22 /* Sources */,
 				OBJ_24 /* Frameworks */,
@@ -175,19 +175,19 @@
 			);
 			dependencies = (
 			);
-			name = log;
+			name = CloudyLogs;
 			packageProductDependencies = (
 				04F8386D25314AA600D759EE /* Alamofire */,
 				04021AD425F034EC00CC099E /* SwiftUtilities */,
 				04021ADB25F0350F00CC099E /* SwiftUIComponents */,
 			);
 			productName = log;
-			productReference = "log::log::Product" /* log.framework */;
+			productReference = "log::log::Product" /* CloudyLogs.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		"log::logTests" /* logTests */ = {
+		"log::logTests" /* CloudyLogsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_37 /* Build configuration list for PBXNativeTarget "logTests" */;
+			buildConfigurationList = OBJ_37 /* Build configuration list for PBXNativeTarget "CloudyLogsTests" */;
 			buildPhases = (
 				OBJ_40 /* Sources */,
 				OBJ_43 /* Frameworks */,
@@ -197,9 +197,9 @@
 			dependencies = (
 				OBJ_45 /* PBXTargetDependency */,
 			);
-			name = logTests;
+			name = CloudyLogsTests;
 			productName = logTests;
-			productReference = "log::logTests::Product" /* logTests.xctest */;
+			productReference = "log::logTests::Product" /* CloudyLogsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -211,7 +211,7 @@
 				LastSwiftMigration = 9999;
 				LastUpgradeCheck = 9999;
 			};
-			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "log" */;
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "CloudyLogs" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -228,10 +228,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"log::log" /* log */,
-				"log::SwiftPMPackageDescription" /* logPackageDescription */,
-				"log::logPackageTests::ProductTarget" /* logPackageTests */,
-				"log::logTests" /* logTests */,
+				"log::log" /* CloudyLogs */,
+				"log::SwiftPMPackageDescription" /* CloudyLogsPackageDescription */,
+				"log::logPackageTests::ProductTarget" /* CloudyLogsPackageTests */,
+				"log::logTests" /* CloudyLogsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,7 +243,7 @@
 			files = (
 				04712F3C247F0F7E00B52690 /* TextFileLogger.swift in Sources */,
 				04712F3B247F0F7E00B52690 /* Loggable.swift in Sources */,
-				OBJ_23 /* log.swift in Sources */,
+				OBJ_23 /* CloudyLogs.swift in Sources */,
 				04712F3D247F0F7E00B52690 /* EnvironmentVariables.swift in Sources */,
 				04712F3A247F0F7E00B52690 /* Logger.swift in Sources */,
 			);
@@ -271,12 +271,12 @@
 /* Begin PBXTargetDependency section */
 		OBJ_35 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "log::logTests" /* logTests */;
+			target = "log::logTests" /* CloudyLogsTests */;
 			targetProxy = 04712F35247F0F5A00B52690 /* PBXContainerItemProxy */;
 		};
 		OBJ_45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "log::log" /* log */;
+			target = "log::log" /* CloudyLogs */;
 			targetProxy = 04712F34247F0F5900B52690 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -291,7 +291,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = log.xcodeproj/log_Info.plist;
+				INFOPLIST_FILE = CloudyLogs.xcodeproj/CloudyLogs_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,13 +301,13 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = log;
+				PRODUCT_BUNDLE_IDENTIFIER = CloudyLogs;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = log;
+				TARGET_NAME = CloudyLogs;
 				TVOS_DEPLOYMENT_TARGET = 13.2;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -322,7 +322,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = log.xcodeproj/log_Info.plist;
+				INFOPLIST_FILE = CloudyLogs.xcodeproj/CloudyLogs_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -332,13 +332,13 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = log;
+				PRODUCT_BUNDLE_IDENTIFIER = CloudyLogs;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = log;
+				TARGET_NAME = CloudyLogs;
 				TVOS_DEPLOYMENT_TARGET = 13.2;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -349,6 +349,7 @@
 			buildSettings = {
 				LD = /usr/bin/true;
 				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.2.0";
+				PRODUCT_NAME = CloudyLogsPackageDescription;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -358,6 +359,7 @@
 			buildSettings = {
 				LD = /usr/bin/true;
 				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.2.0";
+				PRODUCT_NAME = CloudyLogsPackageDescription;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -392,12 +394,14 @@
 		OBJ_33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PRODUCT_NAME = CloudyLogsPackageTests;
 			};
 			name = Debug;
 		};
 		OBJ_34 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PRODUCT_NAME = CloudyLogsPackageTests;
 			};
 			name = Release;
 		};
@@ -411,7 +415,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = log.xcodeproj/logTests_Info.plist;
+				INFOPLIST_FILE = CloudyLogs.xcodeproj/CloudyLogsTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -422,9 +426,10 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_NAME = CloudyLogsTests;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = logTests;
+				TARGET_NAME = CloudyLogsTests;
 				TVOS_DEPLOYMENT_TARGET = 13.2;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
@@ -440,7 +445,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = log.xcodeproj/logTests_Info.plist;
+				INFOPLIST_FILE = CloudyLogs.xcodeproj/CloudyLogsTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,9 +456,10 @@
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_NAME = CloudyLogsTests;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = logTests;
+				TARGET_NAME = CloudyLogsTests;
 				TVOS_DEPLOYMENT_TARGET = 13.2;
 				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
@@ -487,7 +493,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_19 /* Build configuration list for PBXNativeTarget "log" */ = {
+		OBJ_19 /* Build configuration list for PBXNativeTarget "CloudyLogs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_20 /* Debug */,
@@ -496,7 +502,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_2 /* Build configuration list for PBXProject "log" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "CloudyLogs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
@@ -505,7 +511,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_26 /* Build configuration list for PBXNativeTarget "logPackageDescription" */ = {
+		OBJ_26 /* Build configuration list for PBXNativeTarget "CloudyLogsPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_27 /* Debug */,
@@ -514,7 +520,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_32 /* Build configuration list for PBXAggregateTarget "logPackageTests" */ = {
+		OBJ_32 /* Build configuration list for PBXAggregateTarget "CloudyLogsPackageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_33 /* Debug */,
@@ -523,7 +529,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_37 /* Build configuration list for PBXNativeTarget "logTests" */ = {
+		OBJ_37 /* Build configuration list for PBXNativeTarget "CloudyLogsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_38 /* Debug */,

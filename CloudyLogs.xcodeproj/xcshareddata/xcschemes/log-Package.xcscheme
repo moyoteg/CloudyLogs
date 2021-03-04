@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "log::log"
-               BuildableName = "log.framework"
-               BlueprintName = "log"
-               ReferencedContainer = "container:log.xcodeproj">
+               BuildableName = "CloudyLogs.framework"
+               BlueprintName = "CloudyLogs"
+               ReferencedContainer = "container:CloudyLogs.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "log::logTests"
-               BuildableName = "logTests.xctest"
-               BlueprintName = "logTests"
-               ReferencedContainer = "container:log.xcodeproj">
+               BuildableName = "CloudyLogsTests.xctest"
+               BlueprintName = "CloudyLogsTests"
+               ReferencedContainer = "container:CloudyLogs.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
