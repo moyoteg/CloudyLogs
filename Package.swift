@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "CloudyLogs",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v14),
         .macOS(.v10_15),
-        .tvOS(.v13),
-        .watchOS(.v6),
+        .tvOS(.v14),
+        .watchOS(.v7),
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
@@ -25,6 +25,7 @@ let package = Package(
         .package(name: "Alamofire", url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.2.2")),
         .package(name: "SwiftUtilities", url: "https://github.com/moyoteg/SwiftUtilities", .branch("master")),
         .package(name: "SwiftUIComponents", url: "https://github.com/moyoteg/SwiftUIComponents", .branch("main")),
+        .package(name: "LocalConsole", url: "https://github.com/duraidabdul/LocalConsole", .branch("main")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -39,6 +40,7 @@ let package = Package(
                 "Alamofire",
                 "SwiftUtilities",
                 "SwiftUIComponents",
+                "LocalConsole",
             ]),
         .testTarget(
             name: "CloudyLogsTests",

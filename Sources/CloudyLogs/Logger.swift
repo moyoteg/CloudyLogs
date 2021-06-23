@@ -7,16 +7,31 @@ import Foundation
 import Alamofire
 import UIKit
 
+// 3rd party
+import LocalConsole
+
 /// responsible for handling all log creation.
 @objc public class Logger: NSObject {
 
+    public static let localConsoleManager = LCManager.shared
+
+    private static let logQueue = DispatchQueue.init(label: "logQueue")
+    
     /// logs message to log.
     ///
     /// - Parameters:
     ///   - message: string representation of log.
     ///   - type: the type that is sending the log creation.
     @objc static public func log(_ message: String, type: Any? = nil) {
-        Logger.attemptToLog(message, type: type)
+        logQueue.async {
+            Logger.attemptToLog(message, type: type)
+        }
+
+        DispatchQueue.main.async {
+            // Print items to the console view.
+            // TODO: fix performance issues
+            localConsoleManager.print(message)
+        }
     }
 
     /// this function evaluates the environment varibles and creates a log.

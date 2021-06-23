@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "LocalConsole",
+        "repositoryURL": "https://github.com/duraidabdul/LocalConsole",
+        "state": {
+          "branch": "main",
+          "revision": "971de252bf39015a3a8f2c47a790c32892007482",
+          "version": null
+        }
+      },
+      {
         "package": "SwiftUIComponents",
         "repositoryURL": "https://github.com/moyoteg/SwiftUIComponents",
         "state": {

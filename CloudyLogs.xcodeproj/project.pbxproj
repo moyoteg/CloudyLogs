@@ -27,6 +27,7 @@
 		04712F3B247F0F7E00B52690 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04712F37247F0F7E00B52690 /* Loggable.swift */; };
 		04712F3C247F0F7E00B52690 /* TextFileLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04712F38247F0F7E00B52690 /* TextFileLogger.swift */; };
 		04712F3D247F0F7E00B52690 /* EnvironmentVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04712F39247F0F7E00B52690 /* EnvironmentVariables.swift */; };
+		04C94ABF26817764000131AA /* LocalConsole in Frameworks */ = {isa = PBXBuildFile; productRef = 04C94ABE26817764000131AA /* LocalConsole */; };
 		04F8386E25314AA600D759EE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04F8386D25314AA600D759EE /* Alamofire */; };
 		OBJ_23 /* CloudyLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CloudyLogs.swift */; };
 		OBJ_30 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -73,6 +74,7 @@
 			files = (
 				04F8386E25314AA600D759EE /* Alamofire in Frameworks */,
 				04021AD525F034EC00CC099E /* SwiftUtilities in Frameworks */,
+				04C94ABF26817764000131AA /* LocalConsole in Frameworks */,
 				04021ADC25F0350F00CC099E /* SwiftUIComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +182,7 @@
 				04F8386D25314AA600D759EE /* Alamofire */,
 				04021AD425F034EC00CC099E /* SwiftUtilities */,
 				04021ADB25F0350F00CC099E /* SwiftUIComponents */,
+				04C94ABE26817764000131AA /* LocalConsole */,
 			);
 			productName = log;
 			productReference = "log::log::Product" /* CloudyLogs.framework */;
@@ -223,6 +226,7 @@
 				04F8386C25314AA600D759EE /* XCRemoteSwiftPackageReference "Alamofire" */,
 				04021AD325F034EC00CC099E /* XCRemoteSwiftPackageReference "SwiftUtilities" */,
 				04021ADA25F0350F00CC099E /* XCRemoteSwiftPackageReference "SwiftUIComponents" */,
+				04C94ABD26817764000131AA /* XCRemoteSwiftPackageReference "LocalConsole" */,
 			);
 			productRefGroup = OBJ_14 /* Products */;
 			projectDirPath = "";
@@ -292,7 +296,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CloudyLogs.xcodeproj/CloudyLogs_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
@@ -323,7 +327,7 @@
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = CloudyLogs.xcodeproj/CloudyLogs_Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
@@ -557,6 +561,14 @@
 				kind = branch;
 			};
 		};
+		04C94ABD26817764000131AA /* XCRemoteSwiftPackageReference "LocalConsole" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/duraidabdul/LocalConsole";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		04F8386C25314AA600D759EE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -577,6 +589,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04021ADA25F0350F00CC099E /* XCRemoteSwiftPackageReference "SwiftUIComponents" */;
 			productName = SwiftUIComponents;
+		};
+		04C94ABE26817764000131AA /* LocalConsole */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04C94ABD26817764000131AA /* XCRemoteSwiftPackageReference "LocalConsole" */;
+			productName = LocalConsole;
 		};
 		04F8386D25314AA600D759EE /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
