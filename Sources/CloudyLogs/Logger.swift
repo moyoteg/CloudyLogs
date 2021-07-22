@@ -14,9 +14,12 @@ import LocalConsole
 @objc public class Logger: NSObject {
 
     public enum LogType: String {
-        case error      = "🛑"
-        case warning    = "🟠"
-        case info       = "🟢"
+        case error      = "🛑" /// things that should NOT be happening
+        case warning    = "🟠" /// things that probably should not happen
+        case info       = "🔵" /// any useful information
+        
+        case success       = "✅" /// success
+        case failure      = "❌" /// failure
         
         public var string: String { return rawValue }
     }
@@ -30,8 +33,6 @@ import LocalConsole
     }
     
     public static let localConsoleManager = LCManager.shared
-
-    private static let logQueue = DispatchQueue.init(label: "logQueue")
     
     public static var localConsoleLogOperationQueue = OperationQueue()
 
@@ -40,12 +41,12 @@ import LocalConsole
     /// - Parameters:
     ///   - message: string representation of log.
     ///   - type: the type that is sending the log creation.
+    @discardableResult
     static public func log(_ message: String,
                                  type: Any? = nil,
-                                 logType: LogType = .info) {
-        logQueue.async {
-            Logger.attemptToLog(message, type: type, logType: logType)
-        }
+                                 logType: LogType = .info) -> String {
+        
+        return Logger.attemptToLog(message, type: type, logType: logType)
     }
 
     /// this function evaluates the environment varibles and creates a log.
@@ -53,9 +54,10 @@ import LocalConsole
     /// - Parameters:
     ///   - message: intended message for the log.
     ///   - typeName: name of the type creating the log.
+    @discardableResult
     fileprivate static func attemptToLog(_ message: String,
                                          type: Any?,
-                                         logType: LogType) {
+                                         logType: LogType) -> String {
 
         let sanitizedMessage = sanitize(message)
         let log = "\(Date()) \(logType.rawValue): \(sanitizedMessage)"
@@ -71,7 +73,7 @@ import LocalConsole
                 let logWWithType = "\(String(describing: type)): \(log)"
                 print(logWWithType, to: &TextFileLogger.logger)
                 print(logWWithType)
-                return
+                return logWWithType
             }
             
             // otherwise only use the message.
@@ -96,6 +98,8 @@ import LocalConsole
         }
         
         Logger.localConsoleLogOperationQueue.addOperation(logOperation)
+        
+        return log
     }
 
     /// removes any sensitive information from the message.
