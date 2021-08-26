@@ -14,12 +14,12 @@ import LocalConsole
 @objc public class Logger: NSObject {
 
     public enum LogType: String {
-        case error      = "🛑" /// things that should NOT be happening
-        case warning    = "🟠" /// things that probably should not happen
-        case info       = "🔵" /// any useful information
+        case error      = "🛑 error" /// things that should NOT be happening
+        case warning    = "🟠 warning" /// things that probably should not happen
+        case info       = "🔵 info" /// any useful information
         
-        case success       = "✅" /// success
-        case failure      = "❌" /// failure
+        case success    = "✅ success" /// success
+        case failure    = "❌ failure" /// failure
         
         public var string: String { return rawValue }
     }
