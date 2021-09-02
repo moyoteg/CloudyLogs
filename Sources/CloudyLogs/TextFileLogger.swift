@@ -124,4 +124,17 @@ class TextFileLogger: TextOutputStream {
             print(error.localizedDescription)
         }
     }
+    
+    static func clearLogFile() {
+        
+        let url = Log.default.url
+
+        do {
+            try "".write(to: url, atomically: false, encoding: .utf8)
+            print("cleared log file")
+            
+        } catch {
+            print("unable to clear log file")
+        }
+    }
 }

@@ -140,4 +140,10 @@ import LocalConsole
             Logger.log("Logger: \(Log.fileName).log upload progress: \(progress.fractionCompleted)")
             }
         }
+    
+    /// Clears log file
+    static public func clearLogFile() {
+        Logger.log("Logger: cleared log file")
+        TextFileLogger.clearLogFile()
+    }
 }
