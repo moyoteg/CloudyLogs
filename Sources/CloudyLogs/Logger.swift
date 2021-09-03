@@ -14,7 +14,7 @@ import LocalConsole
 @objc public class Logger: NSObject {
 
     public enum LogType: String {
-        case error      = "🛑 error" /// things that should NOT be happening
+        case error      = "🛑 error" /// things that must NOT happen
         case warning    = "🟠 warning" /// things that probably should not happen
         case info       = "🔵 info" /// any useful information
         
@@ -116,8 +116,10 @@ import LocalConsole
     /// - Parameters:
     ///   - succes: closure to be performed if log was succesfully sent to server.
     ///   - fail: closure to be performed if log was NOT succesfully sent to server.
-    static public func sendLogToServer(succes: @escaping() -> Void, fail: @escaping() -> Void) {
-
+    static public func sendLogToServer(
+        succes: @escaping() -> Void,
+        fail: @escaping() -> Void) {
+        
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData
                 .append(Log.default.url, withName: Log.fileName)
@@ -128,32 +130,33 @@ import LocalConsole
             case .success(let data):
                 //print response.result
                 Logger.log(data.debugDescription, type: self)
-
+                
                 DispatchQueue.main.async {
                     succes()
                 }
             case .failure(let error):
                 Logger.log("Logger: multipartFormData failed: \(error)", logType: .error)
             }
-        }.uploadProgress { (progress) in
+        }
+        .uploadProgress { (progress) in
             //Print progress
             Logger.log("Logger: \(Log.fileName).log upload progress: \(progress.fractionCompleted)")
-            }
         }
+    }
     
     /// Clears log file
     public static func clearLogFile() {
-        Logger.log("Logger: cleared log file")
+        print("Logger: cleared log file")
         TextFileLogger.clearLogFile()
     }
     
     public static func removeLinesFromFile(linesToKeep: Int) {
-        Logger.log("Logger: removeLinesFromFile: \(linesToKeep)")
+        print("Logger: removeLinesFromFile: \(linesToKeep)")
         TextFileLogger.removeLinesFromFile(fileURL: Log.default.url, linesToKeep: linesToKeep)
     }
     
     public static func removeFirstLine() {
-        Logger.log("Logger: removeFirstLine")
+        print("Logger: removeFirstLine")
         TextFileLogger.removeFirstLine(fileURL: Log.default.url)
     }
 }
