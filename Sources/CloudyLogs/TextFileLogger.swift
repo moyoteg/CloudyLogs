@@ -54,9 +54,7 @@ class TextFileLogger: TextOutputStream {
                 // clear logs
                 try "".write(to: url, atomically: false, encoding: .utf8)
             }
-            
-            TextFileLogger.removeLinesFromFile(fileURL: url, linesToKeep: 5000)
-            
+                        
             let handle = try FileHandle(forWritingTo: url)
             handle.seekToEndOfFile()
             handle.write(stringData)
