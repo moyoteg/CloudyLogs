@@ -152,7 +152,7 @@ import LocalConsole
         TextFileLogger.removeLinesFromFile(fileURL: Log.default.url, linesToKeep: linesToKeep)
     }
     
-    static func removeFirstLine() {
+    public static func removeFirstLine() {
         Logger.log("Logger: removeFirstLine")
         TextFileLogger.removeFirstLine(fileURL: Log.default.url)
     }
