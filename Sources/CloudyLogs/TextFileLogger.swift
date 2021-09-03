@@ -48,12 +48,14 @@ class TextFileLogger: TextOutputStream {
                 // clear file
                 print("TextFileLogger: file size: \(Log.default.fileSize), max allowed file size: \(maxAllowedFileSize)")
                 
-                // TODO: properly implement
-                // TextFileLogger.removeFirstLine(fileURL: url)
+                // if file is too large start removing lines
+//                TextFileLogger.removeFirstLine(fileURL: url)
                 
                 // clear logs
                 try "".write(to: url, atomically: false, encoding: .utf8)
             }
+            
+            TextFileLogger.removeLinesFromFile(fileURL: url, linesToKeep: 5000)
             
             let handle = try FileHandle(forWritingTo: url)
             handle.seekToEndOfFile()
@@ -65,7 +67,7 @@ class TextFileLogger: TextOutputStream {
         }
     }
 
-    static func removeFirstLine(fileURL: URL) {
+    public static func removeFirstLine(fileURL: URL) {
 
         do {
             
@@ -99,7 +101,7 @@ class TextFileLogger: TextOutputStream {
         }
     }
     
-    static func removeLinesFromFile(fileURL: URL, linesToKeep: Int) {
+    public static func removeLinesFromFile(fileURL: URL, linesToKeep: Int) {
 
         do {
             let data = try Data(contentsOf: fileURL, options: .dataReadingMapped)
@@ -125,7 +127,7 @@ class TextFileLogger: TextOutputStream {
         }
     }
     
-    static func clearLogFile() {
+    public static func clearLogFile() {
         
         let url = Log.default.url
 
