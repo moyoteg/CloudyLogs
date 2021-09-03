@@ -147,13 +147,13 @@ import LocalConsole
         TextFileLogger.clearLogFile()
     }
     
-    public static func removeLinesFromFile(fileURL: URL, linesToKeep: Int) {
+    public static func removeLinesFromFile(linesToKeep: Int) {
         Logger.log("Logger: removeLinesFromFile: \(linesToKeep)")
-        TextFileLogger.removeLinesFromFile(fileURL: fileURL, linesToKeep: linesToKeep)
+        TextFileLogger.removeLinesFromFile(fileURL: Log.default.url, linesToKeep: linesToKeep)
     }
     
-    static func removeFirstLine(fileURL: URL) {
+    static func removeFirstLine() {
         Logger.log("Logger: removeFirstLine")
-        TextFileLogger.removeFirstLine(fileURL: fileURL)
+        TextFileLogger.removeFirstLine(fileURL: Log.default.url)
     }
 }
