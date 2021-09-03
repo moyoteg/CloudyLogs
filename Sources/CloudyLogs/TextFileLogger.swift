@@ -67,7 +67,7 @@ class TextFileLogger: TextOutputStream {
         }
     }
 
-    public static func removeFirstLine(fileURL: URL) {
+    static func removeFirstLine(fileURL: URL) {
 
         do {
             
@@ -101,7 +101,7 @@ class TextFileLogger: TextOutputStream {
         }
     }
     
-    public static func removeLinesFromFile(fileURL: URL, linesToKeep: Int) {
+    static func removeLinesFromFile(fileURL: URL, linesToKeep: Int) {
 
         do {
             let data = try Data(contentsOf: fileURL, options: .dataReadingMapped)
@@ -127,7 +127,7 @@ class TextFileLogger: TextOutputStream {
         }
     }
     
-    public static func clearLogFile() {
+    static func clearLogFile() {
         
         let url = Log.default.url
 

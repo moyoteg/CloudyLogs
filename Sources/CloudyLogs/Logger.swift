@@ -142,8 +142,18 @@ import LocalConsole
         }
     
     /// Clears log file
-    static public func clearLogFile() {
+    public static func clearLogFile() {
         Logger.log("Logger: cleared log file")
         TextFileLogger.clearLogFile()
+    }
+    
+    public static func removeLinesFromFile(fileURL: URL, linesToKeep: Int) {
+        Logger.log("Logger: removeLinesFromFile: \(linesToKeep)")
+        TextFileLogger.removeLinesFromFile(fileURL: fileURL, linesToKeep: linesToKeep)
+    }
+    
+    static func removeFirstLine(fileURL: URL) {
+        Logger.log("Logger: removeFirstLine")
+        TextFileLogger.removeFirstLine(fileURL: fileURL)
     }
 }
