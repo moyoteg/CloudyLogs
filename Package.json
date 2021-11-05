@@ -1,0 +1,180 @@
+{
+  "cLanguageStandard" : null,
+  "cxxLanguageStandard" : null,
+  "dependencies" : [
+    {
+      "scm" : [
+        {
+          "identity" : "alamofire",
+          "location" : "https://github.com/Alamofire/Alamofire.git",
+          "name" : "Alamofire",
+          "productFilter" : null,
+          "requirement" : {
+            "range" : [
+              {
+                "lowerBound" : "5.2.2",
+                "upperBound" : "6.0.0"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scm" : [
+        {
+          "identity" : "swiftutilities",
+          "location" : "https://github.com/moyoteg/SwiftUtilities",
+          "name" : "SwiftUtilities",
+          "productFilter" : null,
+          "requirement" : {
+            "branch" : [
+              "master"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scm" : [
+        {
+          "identity" : "swiftuicomponents",
+          "location" : "https://github.com/moyoteg/SwiftUIComponents",
+          "name" : "SwiftUIComponents",
+          "productFilter" : null,
+          "requirement" : {
+            "branch" : [
+              "main"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "scm" : [
+        {
+          "identity" : "localconsole",
+          "location" : "https://github.com/duraidabdul/LocalConsole",
+          "name" : "LocalConsole",
+          "productFilter" : null,
+          "requirement" : {
+            "branch" : [
+              "main"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "name" : "CloudyLogs",
+  "packageKind" : "root",
+  "pkgConfig" : null,
+  "platforms" : [
+    {
+      "options" : [
+
+      ],
+      "platformName" : "ios",
+      "version" : "14.0"
+    },
+    {
+      "options" : [
+
+      ],
+      "platformName" : "macos",
+      "version" : "10.15"
+    },
+    {
+      "options" : [
+
+      ],
+      "platformName" : "tvos",
+      "version" : "14.0"
+    },
+    {
+      "options" : [
+
+      ],
+      "platformName" : "watchos",
+      "version" : "7.0"
+    }
+  ],
+  "products" : [
+    {
+      "name" : "CloudyLogs",
+      "settings" : [
+
+      ],
+      "targets" : [
+        "CloudyLogs"
+      ],
+      "type" : {
+        "library" : [
+          "automatic"
+        ]
+      }
+    }
+  ],
+  "providers" : null,
+  "swiftLanguageVersions" : null,
+  "targets" : [
+    {
+      "dependencies" : [
+        {
+          "byName" : [
+            "Alamofire",
+            null
+          ]
+        },
+        {
+          "byName" : [
+            "SwiftUtilities",
+            null
+          ]
+        },
+        {
+          "byName" : [
+            "SwiftUIComponents",
+            null
+          ]
+        },
+        {
+          "byName" : [
+            "LocalConsole",
+            null
+          ]
+        }
+      ],
+      "exclude" : [
+
+      ],
+      "name" : "CloudyLogs",
+      "resources" : [
+
+      ],
+      "settings" : [
+
+      ],
+      "type" : "regular"
+    },
+    {
+      "dependencies" : [
+
+      ],
+      "exclude" : [
+
+      ],
+      "name" : "CloudyLogsTests",
+      "resources" : [
+
+      ],
+      "settings" : [
+
+      ],
+      "type" : "test"
+    }
+  ],
+  "toolsVersion" : {
+    "_version" : "5.3.0"
+  }
+}
