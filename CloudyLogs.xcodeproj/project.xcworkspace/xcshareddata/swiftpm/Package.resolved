@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "eaf6e622dd41b07b251d8f01752eab31bc811493",
-          "version": "5.4.1"
+          "revision": "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
+          "version": "5.4.4"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/devicekit/DeviceKit.git",
         "state": {
           "branch": null,
-          "revision": "4cf9f057db69104851634269f7839f8d0bd346a3",
-          "version": "4.3.0"
+          "revision": "da57c444cbb7b6159aa871534d4cf2616d1d55c6",
+          "version": "4.5.2"
         }
       },
       {
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/duraidabdul/LocalConsole",
         "state": {
           "branch": "main",
-          "revision": "971de252bf39015a3a8f2c47a790c32892007482",
+          "revision": "72d9b1fbd5bd35225c7e3ddd98074b0723680661",
           "version": null
         }
       },
@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/moyoteg/SwiftUIComponents",
         "state": {
           "branch": "main",
-          "revision": "faaa337de4d0871e7c1dca8a4c61184cc59679ff",
+          "revision": "b3e280c3dd5f85d0be9b7956e8f105fd376f9ab2",
           "version": null
         }
       },
@@ -42,7 +42,7 @@
         "repositoryURL": "https://github.com/moyoteg/SwiftUtilities",
         "state": {
           "branch": "master",
-          "revision": "53a386889ba4d008ed4a507929a708817a6abd98",
+          "revision": "57180d7a1f4a20a40bf878acbeca5214a638103f",
           "version": null
         }
       }
