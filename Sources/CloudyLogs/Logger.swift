@@ -26,15 +26,15 @@ import LocalConsole
     
     public static var shared = Logger()
     
-    public var logToLocalConsole = false {
+    public var isVisible = false {
         didSet {
-            Logger.localConsoleManager.isVisible = logToLocalConsole
+            Logger.localConsoleManager.isVisible = isVisible
         }
     }
     
-    public static let localConsoleManager = LCManager.shared
+    public var logToLocalConsole = false
     
-    public static var localConsoleLogOperationQueue = OperationQueue()
+    public static let localConsoleManager = LCManager.shared
 
     /// logs message to log.
     ///
@@ -87,17 +87,9 @@ import LocalConsole
             }
         }
         
-        let logOperation = BlockOperation {
-            DispatchQueue.main.async {
-                // Print items to the console view.
-                // TODO: fix performance issues
-                if Logger.shared.logToLocalConsole {
-                    localConsoleManager.print(log)
-                }
-            }
+        if Logger.shared.logToLocalConsole {
+            localConsoleManager.print(log)
         }
-        
-        Logger.localConsoleLogOperationQueue.addOperation(logOperation)
         
         return log
     }
