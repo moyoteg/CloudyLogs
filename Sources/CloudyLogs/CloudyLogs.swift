@@ -36,5 +36,23 @@ public enum Log {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
+    
+    public static func getLogFileData() -> Data? {
+        do {
+            return try Data(contentsOf: Log.`default`.url)
+        }
+        catch {
+            return nil
+        }
+    }
+    
+    public static func getLogs() -> String? {
+        do {
+            return try String(contentsOf: Log.`default`.url)
+        }
+        catch {
+            return nil
+        }
+    }
 }
 #endif

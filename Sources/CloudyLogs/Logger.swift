@@ -60,7 +60,8 @@ import LocalConsole
                                          logType: LogType) -> String {
 
         let sanitizedMessage = sanitize(message)
-        let log = "\(Date()) \(logType.rawValue): \(sanitizedMessage)"
+        /// log format
+        let log = "\(Date()) [\(logType.rawValue)]-> \(sanitizedMessage)"
 
         switch EnvironmentVariables.VerboseLevel.value {
         case .silent:
