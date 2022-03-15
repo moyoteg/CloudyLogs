@@ -8,7 +8,6 @@ public enum Log {
     
     case `default`
         
-
     public static let fileName = "\(UIDevice.modelName)"
     
     public var url: URL {

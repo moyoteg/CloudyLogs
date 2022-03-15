@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
-          "version": "5.4.4"
+          "revision": "f82c23a8a7ef8dc1a49a8bfc6a96883e79121864",
+          "version": "5.5.0"
         }
       },
       {
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/duraidabdul/LocalConsole",
         "state": {
           "branch": "main",
-          "revision": "72d9b1fbd5bd35225c7e3ddd98074b0723680661",
+          "revision": "d995119198d9c4379ac5b2e023452dbde9162ce0",
           "version": null
         }
       },

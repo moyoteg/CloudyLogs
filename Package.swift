@@ -33,8 +33,6 @@ let package = Package(
         .target(
             name: "CloudyLogs",
             dependencies: [
-
-
                 
                 // 3rd Party
                 "Alamofire",
