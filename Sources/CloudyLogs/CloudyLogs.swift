@@ -1,5 +1,4 @@
 
-#if os(iOS) || os(tvOS) || targetEnvironment(macCatalyst) || os(watchOS)
 import Foundation
 import SwiftUIComponents
 import UIKit
@@ -54,4 +53,3 @@ public enum Log {
         }
     }
 }
-#endif
