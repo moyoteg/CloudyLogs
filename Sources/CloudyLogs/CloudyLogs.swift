@@ -1,13 +1,13 @@
 
 import Foundation
-import SwiftUIComponents
+//import SwiftUIComponents
 import UIKit
 
 public enum Log {
     
     case `default`
         
-    public static let fileName = "\(UIDevice.modelName)"
+    public static let fileName = "\(UIDevice.current.description)"
     
     public var url: URL {
         
