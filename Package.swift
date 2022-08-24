@@ -24,6 +24,7 @@ let package = Package(
         // 3rd Party
         .package(name: "Alamofire", url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.2.2")),
         .package(name: "SwiftUtilities", url: "https://github.com/moyoteg/SwiftUtilities", .branch("master")),
+        .package(name: "LocalConsole", url: "https://github.com/duraidabdul/LocalConsole", .branch("main")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -35,6 +36,7 @@ let package = Package(
                 // 3rd Party
                 "Alamofire",
                 "SwiftUtilities",
+                "LocalConsole",
             ]),
         .testTarget(
             name: "CloudyLogsTests",
