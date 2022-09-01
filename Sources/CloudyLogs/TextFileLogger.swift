@@ -48,7 +48,7 @@ class TextFileLogger: TextOutputStream {
                 // clear file
                 print("TextFileLogger: file size: \(Log.default.fileSize), max allowed file size: \(maxAllowedFileSize)")
                 
-                // if file is too large start removing lines
+                // TODO: - if file is too large start removing lines
 //                TextFileLogger.removeFirstLine(fileURL: url)
                 
                 // clear logs

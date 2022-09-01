@@ -7,7 +7,7 @@ public enum Log {
     
     case `default`
         
-    public static let fileName = "\(UIDevice.current.description)"
+    public static var fileName = "\(UIDevice.current.description)"
     
     public var url: URL {
         

@@ -13,6 +13,10 @@ import LocalConsole
 /// responsible for handling all log creation.
 @objc public class Logger: NSObject {
 
+    public static var shareURLString = "https://nikola-cloudylogs.glitch.me/upload"
+
+    public static var isLoggingFromBackground = false
+
     public enum LogType: String {
         case error      = "🛑 error" /// things that must NOT happen
         case warning    = "🟠 warning" /// things that probably should not happen
@@ -36,6 +40,13 @@ import LocalConsole
     
     public static let localConsoleManager = LCManager.shared
 
+    static public func setup(shareURLString: String, fileName: String) {
+        
+        Log.fileName = fileName
+        
+        Logger.shareURLString = shareURLString
+    }
+    
     /// logs message to log.
     ///
     /// - Parameters:
@@ -61,7 +72,7 @@ import LocalConsole
 
         let sanitizedMessage = sanitize(message)
         /// log format
-        let log = "\(Date()) [\(logType.rawValue)]-> \(sanitizedMessage)"
+        let log = "\(Date()) \(isLoggingFromBackground ? "(bckg)":"(fgrnd)")[\(logType.rawValue)]-> \(sanitizedMessage)"
 
         switch EnvironmentVariables.VerboseLevel.value {
         case .silent:
@@ -117,7 +128,7 @@ import LocalConsole
             multipartFormData
                 .append(Log.default.url, withName: Log.fileName)
         },
-        to: "https://nikola-cloudylogs.glitch.me/upload")
+                  to: Logger.shareURLString)
         .response { (dataResponse) in
             switch dataResponse.result {
             case .success(let data):
