@@ -28,6 +28,13 @@ import LocalConsole
         public var string: String { return rawValue }
     }
     
+    public enum AppLifecycleState: String {
+        case foreground = "🔝" /// log happened when app was foregrounded
+        case background = "🔙" /// log happened when app was backgrounded
+        
+        public var string: String { return rawValue }
+    }
+    
     public static var shared = Logger()
     
     public var isVisible = false {
@@ -72,7 +79,7 @@ import LocalConsole
 
         let sanitizedMessage = sanitize(message)
         /// log format
-        let log = "\(Date()) \(isLoggingFromBackground ? "(bckg)":"(fgrnd)")[\(logType.rawValue)]-> \(sanitizedMessage)"
+        let log = "\(Date()) \(isLoggingFromBackground ? AppLifecycleState.background.string:AppLifecycleState.foreground.string)[\(logType.rawValue)]-> \(sanitizedMessage)"
 
         switch EnvironmentVariables.VerboseLevel.value {
         case .silent:
