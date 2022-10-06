@@ -13,9 +13,28 @@ import LocalConsole
 /// responsible for handling all log creation.
 @objc public class Logger: NSObject {
 
-    public static var shareURLString = "https://nikola-cloudylogs.glitch.me/upload"
+    public static var shareURLString = ""
 
     public static var isLoggingFromBackground = false
+
+    fileprivate static var logs = [String]()
+        
+    public static var orderedLogs: [String] {
+        
+        switch Logger.logOrder {
+        case .newestToOldest:
+            return  logs.reversed()
+        case .oldestToNewest:
+            return logs
+        }
+    }
+    
+    public enum LogOrder {
+        case newestToOldest
+        case oldestToNewest
+    }
+    
+    public static var logOrder: LogOrder = .newestToOldest
 
     public enum LogType: String {
         case error      = "🛑 error" /// things that must NOT happen
@@ -39,7 +58,7 @@ import LocalConsole
     
     public var isVisible = false {
         didSet {
-            Logger.localConsoleManager.isVisible = isVisible
+//            Logger.localConsoleManager.isVisible = isVisible
         }
     }
     
@@ -107,10 +126,20 @@ import LocalConsole
         }
         
         if Logger.shared.logToLocalConsole {
-            localConsoleManager.print(log)
+            Logger.printToConsole(log: log)
         }
         
         return log
+    }
+    
+    static func printToConsole(log: String) {
+             
+//        localConsoleManager.print(log)
+        if logs.count > 10000 {
+            logs.removeLast()
+        }
+        
+        logs.append(log)
     }
 
     /// removes any sensitive information from the message.
