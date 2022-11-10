@@ -6,9 +6,9 @@ import PackageDescription
 let package = Package(
     name: "CloudyLogs",
     platforms: [
-        .iOS("14.5"),
+        .iOS("15"),
         .macOS(.v10_15),
-        .tvOS(.v14),
+        .tvOS("15"),
         .watchOS(.v7),
     ],
     products: [

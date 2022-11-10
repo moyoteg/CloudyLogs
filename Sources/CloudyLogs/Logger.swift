@@ -42,7 +42,7 @@ import LocalConsole
         case info       = "🔵 info" /// any useful information
         
         case success    = "✅ success" /// success
-        case failure    = "❌ failure" /// failure
+        //case failure    = "❌ failure" /// failure
         
         public var string: String { return rawValue }
     }
