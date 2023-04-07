@@ -7,7 +7,7 @@ let package = Package(
     name: "CloudyLogs",
     platforms: [
         .iOS("15"),
-        .macOS(.v10_15),
+        .macOS("13.1"),
         .tvOS("15"),
         .watchOS(.v7),
     ],
