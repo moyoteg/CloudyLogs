@@ -1,13 +1,19 @@
 
 import Foundation
+
 //import SwiftUIComponents
 import UIKit
+import SwiftUI
 
 public enum Log {
     
     case `default`
-        
+    
+#if os(watchOS)
+    public static var fileName = "\(WKInterfaceDevice.current().name)"
+#else
     public static var fileName = "\(UIDevice.current.description)"
+#endif
     
     public var url: URL {
         

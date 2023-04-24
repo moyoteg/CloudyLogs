@@ -8,7 +8,7 @@ import Alamofire
 import UIKit
 
 // 3rd party
-import LocalConsole
+//import LocalConsole
 
 /// responsible for handling all log creation.
 @objc public class Logger: NSObject {
@@ -64,7 +64,7 @@ import LocalConsole
     
     public var logToLocalConsole = false
     
-    public static let localConsoleManager = LCManager.shared
+//    public static let localConsoleManager = LCManager.shared
 
     static public func setup(shareURLString: String, fileName: String) {
         
