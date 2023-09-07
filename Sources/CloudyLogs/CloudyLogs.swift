@@ -10,7 +10,7 @@ public enum Log {
     case `default`
     
 #if os(watchOS)
-    public static var fileName = "\(WKInterfaceDevice.current().name)"
+    public static var fileName = "\(WKInterfaceDevice.current().suggestion)"
 #else
     public static var fileName = "\(UIDevice.current.description)"
 #endif
