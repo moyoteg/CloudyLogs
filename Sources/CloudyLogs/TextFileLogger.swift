@@ -6,8 +6,11 @@
 
 import Foundation
 import SwiftUtilities
+#if os(iOS)
 import UIKit
-
+#else
+import Cocoa
+#endif
 /// Responsible for generating and appending logs onto a text file.
 class TextFileLogger: TextOutputStream {
 

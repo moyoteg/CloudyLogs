@@ -2,7 +2,11 @@
 import Foundation
 
 //import SwiftUIComponents
+#if os(iOS)
 import UIKit
+#else
+import Cocoa
+#endif
 import SwiftUI
 
 public enum Log {
@@ -11,6 +15,8 @@ public enum Log {
     
 #if os(watchOS)
     public static var fileName = "\(WKInterfaceDevice.current().suggestion)"
+#elseif os(macOS)
+    public static var fileName = "\(Host.current().description)"
 #else
     public static var fileName = "\(UIDevice.current.description)"
 #endif

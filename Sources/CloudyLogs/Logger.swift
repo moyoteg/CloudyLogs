@@ -5,8 +5,11 @@
 
 import Foundation
 import Alamofire
+#if os(iOS)
 import UIKit
-
+#else
+import Cocoa
+#endif
 // 3rd party
 //import LocalConsole
 
