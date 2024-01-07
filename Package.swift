@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "CloudyLogs",
     platforms: [
-        .iOS("15"),
-        .macOS("13.1"),
-        .tvOS("15"),
-        .watchOS(.v7),
+        .iOS("16"),
+        .macOS("14"),
+        .tvOS("16"),
+        .watchOS("8"),
     ],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
