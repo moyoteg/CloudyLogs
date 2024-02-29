@@ -38,7 +38,7 @@ enum EnvironmentVariables: String, RawRepresentable {
                 let verboseLevel = EnvironmentVariables.VerboseLevel(rawValue: value) else {
                 // must use "print" since we don't want a recurseive call
                 if !printedNoVerboseLevelFound {
-                    print("EnvironmentVariables: could not find verboseLevel")
+                    Logger.log("EnvironmentVariables: could not find verboseLevel")
                     printedNoVerboseLevelFound = true
                 }
                 return .verbose
